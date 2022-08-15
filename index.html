@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="assets/lib/bootstrap/bootstrap.min.css">
+    <!-- BoxIcons css -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Main css -->
+    <link rel="stylesheet" href="assets/style/style.css">
+
+    <title>Coin-me</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <div class="container">
+            <a class="navbar-brand" href="#"> <i class='bx bx-bookmark-alt' ></i>Coin Me</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Novo Item</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Items</a>
+                </li>
+              </ul>
+            </div>
+        </div>
+
+      </nav>
+
+      <div class="container">
+        <div class="row">
+          <div class="col mb-5">
+            <h1 class="display-4">Registro de nova despesa</h1>
+          </div>
+        </div>
+  
+        <div class="row mb-2">
+  
+          
+          <div class="col-md-2">
+            <input type="text" class="form-control" placeholder="Data" id="txtData" />
+          </div>
+  
+          <div class="col-md-6">
+            <select class="form-control" id="txtTipo">
+              <option value="">Tipo</option>
+              <option value="alimentacao">Alimentação</option>
+              <option value="educacao">Educação</option>
+              <option value="lazer">Lazer</option>
+              <option value="saude">Saúde</option>
+              <option value="transporte">Transporte</option>
+            </select>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-8">
+            <input type="text" class="form-control" placeholder="Descrição" id="txtDescricao" />
+          </div>
+  
+          <div class="col-md-2">
+            <input type="text" class="form-control" placeholder="Valor" id="txtValor" />
+          </div>
+  
+          <div class="col-md-2 d-flex justify-content-end">
+            <button type="button" class="btn btn-success" id="btn-registra" onclick="pegaValores()">
+              <i class='bx bx-plus'></i>
+            </button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- IMask -->
+    <script src="https://unpkg.com/imask"></script>
+
+    <!-- MainJS -->
+    <script src="assets/scripts/main.js"></script>
+    
+    <!-- BootstrapJS -->
+    <script src="assets/lib/bootstrap/bootstrap.min.js"></script>
+    
+    <!-- Box iconsJS -->
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+
+</body>
+
+</html>
