@@ -1,10 +1,10 @@
 //  Controle de mascara
-const dateMask: any = IMask(document.getElementById('txtData'), {
-    mask: Date,
-    min: new Date(2000, 0, 1),
-    max: new Date(2022, 08, 15),
-    lazy: false
-})
+// const dateMask: any = IMask(document.getElementById('txtData'), {
+//     mask: Date,
+//     min: new Date(2000, 0, 1),
+//     max: new Date(2022, 08, 15),
+//     lazy: false
+// })
 
 class Register{
     data: string
@@ -57,15 +57,35 @@ class Register{
 
 }
 
+interface Orcamento{
+    data: string,
+    tipo: string,
+    descricao?: string,
+    valor: number
+}
+
+
+// data: document.getElementById('txtData').value as HTMLInputElement,
+// tipo: document.getElementById('txtTipo').value  as HTMLInputElement,
+// descricao: document.getElementById('txtDescricao').value as HTMLInputElement,
+// valor: document.getElementById('txtValor').value as HTMLInputElement
+
+// For Debug
+let log = (text:string | object) =>{
+    console.log(text)
+}
+
 const pegaValores = ():void => {
-    let register: object = {
-        data: document.getElementById('txtData').value as HTMLInputElement,
-        tipo: document.getElementById('txtTipo').value  as HTMLInputElement,
-        descricao: document.getElementById('txtDescricao').value as HTMLInputElement,
-        valor: document.getElementById('txtValor').value as HTMLInputElement
+
+
+    let registros: Orcamento = {
+        data: '10.20.2002',
+        tipo: 'Alimentação',
+        valor: 10.00
     }
 
-    register = new Register(register.data, register.tipo, register.descricao, register.valor);
+    log(registros)
 
-    console.log(register)
+
+    // register = new Register(register.data, register.tipo, register.descricao, register.valor);
 }
