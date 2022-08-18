@@ -81,8 +81,31 @@ var Register = /** @class */ (function () {
 var log = function (text) {
     console.log(text);
 };
-var pegaValores = function () {
-    var data = document.getElementById('txtData').value;
+// Função que irá limpar os valores
+function limpaValores(reg) {
+    var _a;
+    reg.data.trim().toLowerCase();
+    reg.tipo.trim().toLowerCase();
+    (_a = reg.descricao) === null || _a === void 0 ? void 0 : _a.trim().toLowerCase();
+    return { reg: reg };
+}
+// Função que irá fazer a captura das informações do formulário
+var pegaValores = function (limpa) {
+    alert('Entrando em pegaValores');
+    var data = document.getElementById('txtData');
+    var tipo = document.getElementById('txtTipo');
+    var descricao = document.getElementById('txtDescricao');
+    var valor = document.getElementById('txtValor');
+    var reg = {
+        data: data.value,
+        tipo: tipo.value,
+        descricao: descricao.value,
+        valor: valor.value
+    };
+    limpa(reg);
+};
+var registraValores = function () {
+    pegaValores(limpaValores);
     var registros = {
         data: '10.20.2002',
         tipo: 'Alimentação',

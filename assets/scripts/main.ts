@@ -75,8 +75,37 @@ let log = (text:string | object) =>{
     console.log(text)
 }
 
-const pegaValores = ():void => {
+// Função que irá limpar os valores
+function limpaValores (reg:Orcamento):Orcamento {
+    reg.data.trim().toLowerCase()
+    reg.tipo.trim().toLowerCase()
+    reg.descricao?.trim().toLowerCase()
+    return {reg}
+}
 
+// Função que irá fazer a captura das informações do formulário
+const pegaValores = (limpa: any):void => {
+    alert('Entrando em pegaValores')
+
+    let data = document.getElementById('txtData') as HTMLElement
+    let tipo = document.getElementById('txtTipo') as HTMLElement
+    let descricao = document.getElementById('txtDescricao') as HTMLElement
+    let valor = document.getElementById('txtValor') as HTMLAnchorElement
+
+    let reg: Orcamento = {
+        data: data.value,
+        tipo: tipo.value,
+        descricao: descricao.value,
+        valor: valor.value
+    }
+    
+    limpa(reg)
+
+}
+
+const registraValores = ():void => {
+
+    pegaValores(limpaValores)
 
     let registros: Orcamento = {
         data: '10.20.2002',
