@@ -16,15 +16,18 @@ let log = (text:string | object) =>{
 }
 
 // Função que irá limpar os valores
-function limpaValores (reg:registerI):registerI {
+function limpaValores (reg:registerI):string {
 
     log('Entrando em limpa valores')
 
     reg.data.trim().toLowerCase()
     reg.tipo.trim().toLowerCase()
     reg.descricao?.trim().toLowerCase()
-    return reg
-    
+
+    let regJson: string  = JSON.stringify(reg)
+
+    return regJson
+
 }
 
 // Função que irá fazer a captura das informações do formulário
