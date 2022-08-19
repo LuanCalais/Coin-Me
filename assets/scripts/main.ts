@@ -1,3 +1,6 @@
+import{registerI} from "./Interface/registroI"
+import {Register} from "./Class/register"
+
 //  Controle de mascara
 // const dateMask: any = IMask(document.getElementById('txtData'), {
 //     mask: Date,
@@ -6,69 +9,6 @@
 //     lazy: false
 // })
 
-class Register{
-    data: string
-    tipo: string
-    descricao: string
-    valor: number
-
-    constructor(data: string, tipo: string, descricao: string, valor: number){
-        this.data = data
-        this.tipo = tipo
-        this.descricao = descricao
-        this.valor = valor
-    }
-
-    get getData(){
-        return this.data
-    }
-
-    set setData(data:string){
-        this.data = data
-    }
-
-    get getTipo(){
-        return this.tipo
-    }
-
-    set setTipo(tipo: string){
-        this.tipo = tipo
-    }
-
-    get getDescricao(){
-        return this.descricao
-    }
-
-    set setDescricao( descricao:string){
-        this.descricao = descricao
-    }
-
-    get getValor(){
-        return this.valor
-    }
-
-    set setValor(valor:number){
-        this.valor = valor
-    }
-
-    logDetails(): void{
-        console.log(`At the day ${this.data} you spend ${this.valor}, with ${this.descricao}`)
-    }
-
-}
-
-interface Orcamento{
-    data: string,
-    tipo: string,
-    descricao?: string,
-    valor: number
-}
-
-
-// data: document.getElementById('txtData').value as HTMLInputElement,
-// tipo: document.getElementById('txtTipo').value  as HTMLInputElement,
-// descricao: document.getElementById('txtDescricao').value as HTMLInputElement,
-// valor: document.getElementById('txtValor').value as HTMLInputElement
 
 // For Debug
 let log = (text:string | object) =>{
@@ -76,45 +16,40 @@ let log = (text:string | object) =>{
 }
 
 // Função que irá limpar os valores
-function limpaValores (reg:Orcamento):Orcamento {
+function limpaValores (reg:registerI):registerI {
+
+    log('Entrando em limpa valores')
+
     reg.data.trim().toLowerCase()
     reg.tipo.trim().toLowerCase()
     reg.descricao?.trim().toLowerCase()
-    return {reg}
+    return reg
+    
 }
 
 // Função que irá fazer a captura das informações do formulário
 const pegaValores = (limpa: any):void => {
-    alert('Entrando em pegaValores')
+
+    log('Entrando em pegaValores')
 
     let data = document.getElementById('txtData') as HTMLElement
     let tipo = document.getElementById('txtTipo') as HTMLElement
     let descricao = document.getElementById('txtDescricao') as HTMLElement
     let valor = document.getElementById('txtValor') as HTMLAnchorElement
 
-    let reg: Orcamento = {
+    const registro: registerI = {
         data: data.value,
         tipo: tipo.value,
         descricao: descricao.value,
-        valor: valor.value
+        valor: valor.value 
     }
-    
-    limpa(reg)
+
+    limpa(registro)
 
 }
 
+// Inicio do fluxo que ira registrar os valores
 const registraValores = ():void => {
-
-    pegaValores(limpaValores)
-
-    let registros: Orcamento = {
-        data: '10.20.2002',
-        tipo: 'Alimentação',
-        valor: 10.00
-    }
-
-    log(registros)
-
-
-    // register = new Register(register.data, register.tipo, register.descricao, register.valor);
+    log('Entrando no registra valores')
+    pegaValores(limpaValores)    
 }
