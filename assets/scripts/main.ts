@@ -1,37 +1,43 @@
-import{registerI} from "./Interface/registroI"
-import {Register} from "./Class/register"
+import { BD } from './Class/bd';
+import { registerI } from "./Interface/registroI"
 
 // For Debug
-let log = (text:string | object) =>{
+let log = (text: string | object) => {
     console.log(text)
 }
 
-// Função que irá limpar os valores
-function limpaValores (reg:registerI):string {
+// Banco de dados 
+const bd = new BD();
 
+// Função que irá limpar os valores
+function limpaValores(reg: registerI): string {
+
+    reg.local.trim().toLowerCase()
     reg.data.trim().toLowerCase()
     reg.tipo.trim().toLowerCase()
     reg.descricao?.trim().toLowerCase()
 
-    let regJson: string  = JSON.stringify(reg)
+    let regJson: string = JSON.stringify(reg)
 
     return regJson
 
 }
 
 // Função que irá fazer a captura das informações do formulário
-const pegaValores = (limpa: any):string => {
+const pegaValores = (limpa: any): string => {
 
+    let local = document.getElementById('txtLocal') as HTMLElement
     let data = document.getElementById('txtData') as HTMLElement
     let tipo = document.getElementById('txtTipo') as HTMLElement
     let descricao = document.getElementById('txtDescricao') as HTMLElement
     let valor = document.getElementById('txtValor') as HTMLAnchorElement
 
     const registro: registerI = {
+        local: local.value,
         data: data.value,
         tipo: tipo.value,
         descricao: descricao.value,
-        valor: valor.value 
+        valor: valor.value
     }
 
     return limpa(registro)
@@ -39,7 +45,9 @@ const pegaValores = (limpa: any):string => {
 }
 
 // Inicio do fluxo que ira registrar os valores
-const registraValores = ():void => {
-    log('Entrando no registra valores')  
+const registraValores = (): void => {
     let registro: string = pegaValores(limpaValores)
+
+    // Teste
+    bd.gravar(registro)
 }
