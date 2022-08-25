@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+.row {
+  --bs-gutter-x: 0!important;
+  --bs-gutter-y: 0!important;
+}
+
 body {
   height: 100vh;
   width: 100%;
@@ -15,6 +20,42 @@ body nav .container a i {
   vertical-align: middle;
   font-size: 2rem;
   margin-right: 0.4em;
+}
+body main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  border: 1px solid red;
+  min-height: 589px;
+  height: auto;
+}
+body main .engloba-conteudo {
+  width: 95%;
+}
+body main .engloba-conteudo section {
+  margin-top: 1.4em;
+  margin-bottom: 1.4em;
+  min-height: 11.125em;
+  width: 100%;
+}
+body main .engloba-conteudo section .back-grad-black {
+  background: linear-gradient(82.03deg, #4C5454 73.48%, #FFFFFF 233.54%);
+}
+body main .engloba-conteudo section .red-grad-primary {
+  background: linear-gradient(90deg, #ED254E 46.45%, rgba(237, 37, 78, 0) 272.73%);
+}
+body main .engloba-conteudo section .row {
+  min-height: 11.125em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+body main .engloba-conteudo section .row .box-s1, body main .engloba-conteudo section .row .box-s2 {
+  border-radius: 0.625em;
+}
+body main .engloba-conteudo section .row .box-s2 {
+  width: 95.9%;
 }
 
 /*# sourceMappingURL=style.css.map */

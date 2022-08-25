@@ -1,18 +1,25 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
+.row{
+    --bs-gutter-x: 0!important;
+    --bs-gutter-y: 0!important;
+}
+
+body {
     height: 100vh;
     width: 100%;
 
-    nav{
-        background:  linear-gradient(88.12deg, #49E032 54.64%, #4BBEFF 162.61%);
-        .container{
-            a{
-                i{
+    // Estilo Nav
+    nav {
+        background: linear-gradient(88.12deg, #49E032 54.64%, #4BBEFF 162.61%);
+
+        .container {
+            a {
+                i {
                     vertical-align: middle;
                     font-size: 2rem;
                     margin-right: 0.4em;
@@ -20,5 +27,56 @@ body{
             }
         }
     }
+
+    main {
+
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        border: 1px solid red;
+        min-height: 589px;
+        height: auto;
+
+        .engloba-conteudo {
+
+            width: 95%;
+
+            // Estilo geral section
+            section {
+
+                .back-grad-black{
+                    background: linear-gradient(82.03deg, #4C5454 73.48%, #FFFFFF 233.54%);                }
+
+                .red-grad-primary{
+                    background: linear-gradient(90deg, #ED254E 46.45%, rgba(237, 37, 78, 0) 272.73%);
+                }
+
+                margin-top: 1.4em;
+                margin-bottom: 1.4em;
+                min-height: 11.125em;
+                width: 100%;
+
+                .row{
+                    min-height: 11.125em;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    
+                    .box-s1, .box-s2{
+                        border-radius: 0.625em;
+                    }
+
+                    .box-s2{
+                        width: 95.9%;
+                    }
+                }
+
+            }
+        }
+
+
+    }
+
 
 }

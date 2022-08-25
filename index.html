@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Bootstrap css -->
-  <link rel="stylesheet" href="assets/lib/bootstrap/bootstrap.min.css">
-  <!-- BoxIcons css -->
-  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-  <!-- Main css -->
-  <link rel="stylesheet" href="assets/style/style.css">
+<!-- Bootstrap css -->
+<link rel="stylesheet" href="assets/lib/bootstrap/bootstrap.min.css">
+<!-- BoxIcons css -->
+<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+<!-- Main css -->
+<link rel="stylesheet" href="assets/style/style.css">
 
-  <title>Coin-me</title>
-</head>
+<title>Coin-me</title>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark">
@@ -39,46 +37,73 @@
 
   </nav>
 
-  <div class="container mt-5">
+  <main>
 
-    <div class="row mb-2">
+    <div class="engloba-conteudo">
 
-      <div class="col-md-7">
-        <input type="text" class="form-control" placeholder="Local" id="txtLocal">
-      </div>
+      <!-- Section 1 -->
+      <section>
+        <div class="row">
+          <div class="col-8 box-s1 back-grad-black">
+          </div>
+          <div class="col-3 box-s1 red-grad-primary">
+          </div>
+        </div>
+      </section>
 
-      <div class="col-md-2">
-        <input type="text" class="form-control" placeholder="Data" id="txtData" />
-      </div>
+      <!-- Section 2 -->
+      <section>
+        <div class="row">
+          <div class="col-12 box-s2 back-grad-black">
 
-      <div class="col-md-6">
-        <select class="form-control" id="txtTipo">
-          <option value="">Tipo</option>
-          <option value="alimentacao">Alimentação</option>
-          <option value="educacao">Educação</option>
-          <option value="lazer">Lazer</option>
-          <option value="saude">Saúde</option>
-          <option value="transporte">Transporte</option>
-        </select>
+          </div>
+        </div>
+      </section>
+
+      <div class="container">
+
+        <div class="row mb-2">
+
+          <div class="col-md-7">
+            <input type="text" class="form-control" placeholder="Local" id="txtLocal">
+          </div>
+
+          <div class="col-md-2">
+            <input type="text" class="form-control" placeholder="Data" id="txtData" />
+          </div>
+
+          <div class="col-md-6">
+            <select class="form-control" id="txtTipo">
+              <option value="">Tipo</option>
+              <option value="alimentacao">Alimentação</option>
+              <option value="educacao">Educação</option>
+              <option value="lazer">Lazer</option>
+              <option value="saude">Saúde</option>
+              <option value="transporte">Transporte</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-8">
+            <input type="text" class="form-control" placeholder="Descrição" id="txtDescricao" />
+          </div>
+
+          <div class="col-md-2">
+            <input type="text" class="form-control" placeholder="Valor" id="txtValor" />
+          </div>
+
+          <div class="col-md-2 d-flex justify-content-end">
+            <button type="button" class="btn btn-success" id="btn-registra" onclick="registraValores()">
+              <i class='bx bx-plus'></i>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-8">
-        <input type="text" class="form-control" placeholder="Descrição" id="txtDescricao" />
-      </div>
 
-      <div class="col-md-2">
-        <input type="text" class="form-control" placeholder="Valor" id="txtValor" />
-      </div>
-
-      <div class="col-md-2 d-flex justify-content-end">
-        <button type="button" class="btn btn-success" id="btn-registra" onclick="registraValores()">
-          <i class='bx bx-plus'></i>
-        </button>
-      </div>
-    </div>
-  </div>
+  </main>
 
   <!-- Fix of the exports not defined -->
   <script>var exports = {};</script>
