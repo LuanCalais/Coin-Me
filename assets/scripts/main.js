@@ -1,12 +1,25 @@
 "use strict";
 exports.__esModule = true;
-var bd_1 = require("./Class/bd");
+var BD = /** @class */ (function () {
+    // Construtor do bd
+    function BD() {
+        this.id = localStorage.getItem('id');
+        // Se o id for nulo, é setado um padrão
+        if (this.id === null)
+            localStorage.setItem('id', '0');
+    }
+    // Método que faz a gravação no banco local do navegador
+    BD.prototype.gravar = function (registro, callBack) {
+        console.log(registro);
+    };
+    return BD;
+}());
 // For Debug
 var log = function (text) {
     console.log(text);
 };
 // Banco de dados 
-var bd = new bd_1.BD();
+var bd = new BD();
 // Função que irá limpar os valores
 function limpaValores(reg) {
     var _a;
@@ -17,6 +30,14 @@ function limpaValores(reg) {
     var regJson = JSON.stringify(reg);
     return regJson;
 }
+var limpaCampo = function () {
+    document.getElementById('txtLocal').value = '';
+    document.getElementById('txtData').value = '';
+    document.getElementById('txtTipo').value = '';
+    document.getElementById('txtDescricao').value = '';
+    document.getElementById('txtDescricao').value = '';
+    document.getElementById('txtValor').value = '';
+};
 // Função que irá fazer a captura das informações do formulário
 var pegaValores = function (limpa) {
     var local = document.getElementById('txtLocal');
@@ -36,6 +57,17 @@ var pegaValores = function (limpa) {
 // Inicio do fluxo que ira registrar os valores
 var registraValores = function () {
     var registro = pegaValores(limpaValores);
-    // Teste
-    bd.gravar(registro);
+    // Efetua Cadastro
+    var cadastroValores = function (registro) { return new Promise(function (resolve, reject) {
+        bd.gravar(registro, function (err, content) {
+            if (err) {
+                reject(err);
+            }
+            else {
+                resolve(content);
+            }
+        });
+    }); };
+    cadastroValores(registro).then(function () { console.log('Chegando até aqui'); });
+    limpaCampo();
 };

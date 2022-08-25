@@ -1,0 +1,19 @@
+{
+  "name": "coin-me",
+  "version": "1.0.0",
+  "description": " study aplication typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "teste"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuanCalais/Coin-Me.git"
+  },
+  "author": "LuanCalais",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuanCalais/Coin-Me/issues"
+  },
+  "homepage": "https://github.com/LuanCalais/Coin-Me#readme"
+}
