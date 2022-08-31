@@ -5,8 +5,8 @@
 }
 
 .row {
-  --bs-gutter-x: 0!important;
-  --bs-gutter-y: 0!important;
+  --bs-gutter-x: 0 !important;
+  --bs-gutter-y: 0 !important;
 }
 
 body {
@@ -21,11 +21,73 @@ body nav .container a i {
   font-size: 2rem;
   margin-right: 0.4em;
 }
+body aside {
+  position: fixed;
+  width: 2.75em;
+  top: 0;
+  height: 100vh;
+  z-index: 100;
+  background-color: #4C5454;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  box-shadow: 3px 7px 10px rgba(0, 0, 0, 0.4);
+}
+body aside:hover {
+  width: 12.5em;
+}
+body aside ul {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+body aside ul li {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  margin-bottom: 1px;
+  margin-top: 2em;
+  column-gap: 10px;
+}
+body aside ul li:hover {
+  background-color: #353838;
+}
+body aside ul li a {
+  height: 100%;
+  position: relative;
+  display: block;
+  text-align: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+  font-weight: 100;
+  font-size: 1.35em;
+}
+body aside ul li a:hover {
+  color: #fff;
+}
+body aside ul li a:after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 2px;
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: -10;
+}
+body aside ul li i {
+  max-width: 80px;
+  min-width: 45px;
+  text-align: center;
+  font-size: 1.4rem;
+  color: fff;
+  cursor: pointer;
+}
 body main {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  border: 1px solid red;
   min-height: 589px;
   height: auto;
 }
@@ -51,7 +113,8 @@ body main .engloba-conteudo section .row {
   flex-wrap: wrap;
   justify-content: space-around;
 }
-body main .engloba-conteudo section .row .box-s1, body main .engloba-conteudo section .row .box-s2 {
+body main .engloba-conteudo section .row .box-s1,
+body main .engloba-conteudo section .row .box-s2 {
   border-radius: 0.625em;
 }
 body main .engloba-conteudo section .row .box-s2 {
